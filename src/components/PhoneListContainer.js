@@ -7,10 +7,10 @@ class PhoneListContainer extends Component {
         const { phoneList } = this.props;
         return (
             <ul>
-                {phoneList.map(phone => {
+                {phoneList.map((phone, i) => {
                     return (
-                        <Link>
-                            <li key={phone.id}>
+                        <li key={i}>
+                            <Link to={`/phone/${phone.id}`}>
                                 <p>{phone.name}</p>
                                 <img
                                     src={phone.image}
@@ -18,8 +18,8 @@ class PhoneListContainer extends Component {
                                     title={phone.name}
                                 />
                                 <p>{phone.price}</p>
-                            </li>
-                        </Link>
+                            </Link>
+                        </li>
                     );
                 })}
             </ul>

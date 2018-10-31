@@ -22,7 +22,13 @@ class App extends Component {
             <Home
               phoneList={this.state.phoneList} />
           } />
-        <Route path="/child/:id" component={PhoneDetailContainer} />
+        <Route
+          path="/phone/:id"
+          render={(props) =>
+            <PhoneDetailContainer
+              match={props.match}
+              phoneList={this.state.phoneList} />
+          } />
       </Switch>
     );
   }
