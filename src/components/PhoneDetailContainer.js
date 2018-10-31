@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 
 class PhoneDetailContainer extends Component {
     render() {
-        return (
-            <div>
-
-            </div>
+        return(
+            <div></div>
         );
     }
 }
