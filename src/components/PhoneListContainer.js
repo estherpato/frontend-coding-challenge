@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import './stylesheets/App.css';
+import '../stylesheets/PhoneListContainer.css';
 
 class PhoneListContainer extends Component {
     render() {
         const { phoneList } = this.props;
         return (
-            <ul>
-                {phoneList.map((phone, i) => {
+            <ul className="phone-list">
+                {phoneList.map(phone => {
                     return (
-                        <li key={i}>
-                            <Link to={`/phone/${phone.id}`}>
-                                <p>{phone.name}</p>
-                                <img
-                                    src={phone.image}
-                                    alt={phone.name}
-                                    title={phone.name}
-                                />
-                                <p>{phone.price}</p>
+                        <li
+                            key={phone.id}
+                            className="phone-item"
+                        >
+                            <Link
+                                to={`/phone/${phone.id}`}
+                            >
+                                <div className="phone-item__content">
+                                    <p className="phone-item__name">{phone.name}</p>
+                                    <img
+                                        src={phone.image}
+                                        alt={phone.name}
+                                        title={phone.name}
+                                        className="list__image"
+                                    />
+                                    <p>{phone.price}</p>
+                                </div>
                             </Link>
                         </li>
                     );

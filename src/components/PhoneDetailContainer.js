@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-// import './stylesheets/App.css';
+import '../stylesheets/PhoneDetailContainer.css';
 
 class PhoneDetailContainer extends Component {
     render() {
@@ -11,17 +11,17 @@ class PhoneDetailContainer extends Component {
         console.log('hola')
         return (
             <Fragment>
-                <div>
+                <div className="detail-container">
                     <h1>{phone.name}</h1>
                     <h2>{phone.title}</h2>
                     <img
                         src={phone.image}
                         alt={phone.name}
                         title={phone.name}
+                        className="detail-image"
                     />
-                    <ul>
-                        Colors:
-                    {phone.color.map((color, index) => {
+                    <ul className="detail-color-list">
+                        {phone.color.map((color, index) => {
                             return (
                                 <li key={index}>
                                     {color}
@@ -29,9 +29,11 @@ class PhoneDetailContainer extends Component {
                             );
                         })}
                     </ul>
-                    <p>{phone.price}</p>
+                    <p>Price: {phone.price}</p>
                 </div>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                    <div className="home-btn">&#8592; Home</div>
+                </Link>
             </Fragment>
         );
     }

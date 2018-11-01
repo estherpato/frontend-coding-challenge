@@ -32,7 +32,7 @@ const phones = [
     {
         id: 4,
         name: 'Xiaomi Mi 8',
-        image: 'https://cdn.shopify.com/s/files/1/2700/1230/products/6941059608837-1_1024x1024.jpg',
+        image: 'https://www.miespaña.com/10091-large_default/xiaomi-mi-8-6gb64gb-azul.jpg',
         title: '',
         color: ['Black', 'White', 'Blue', 'Gold'],
         price: '499 €'
