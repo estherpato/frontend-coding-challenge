@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import Home from './Home.js';
 import PhoneDetailContainer from './PhoneDetailContainer.js';
 import '../stylesheets/App.css';
@@ -9,8 +10,22 @@ class App extends Component {
     super(props);
 
     this.state = {
-      phoneList: this.props.phoneList,
+      phoneList: [],
     }
+  }
+
+  componentDidMount() {
+    this.getPhoneList();
+  }
+
+  getPhoneList() {
+    axios.get('http://localhost:3001/phones')
+  .then(response => {
+    this.setState({ phoneList: response.data.phones })
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   }
 
   render() {
