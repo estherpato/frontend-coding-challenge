@@ -8,7 +8,7 @@ class PhoneDetailContainer extends Component {
         const linkID = parseInt(match.params.id);
         const phoneListed = phoneList.filter(item => item.id === linkID);
         const phone = phoneListed[0];
-        console.log('hola')
+
         return (
             <Fragment>
                 <div className="detail-container">
